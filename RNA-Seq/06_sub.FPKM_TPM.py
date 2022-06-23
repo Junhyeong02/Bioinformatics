@@ -1,14 +1,15 @@
+# stringtie 출력 gtf로부터 FPKM, TPM 값을 집계
+# 06.FPKM_TPM.sh
+
 import sys
 import os
-import numpy as np
 import pandas as pd
-import time
 from multiprocessing import Process, Manager, Pool
 from glob import glob 
 
 head = ["sequence", "source", "feature", "start", "end", "score", "strand", "phase", "attri"]
 
-def work(pid, gtf, result1, result2):
+def work(pid, gtf, result1, result2): # 각 gtf를 읽어서 FPKM, TPM을 저장
     print(gtf) 
 
     df = pd.read_csv(gtf, sep = "\t", comment = "#", names = head)
@@ -35,14 +36,14 @@ def work(pid, gtf, result1, result2):
 
     return
 
-def work2(pid, data, out, order):
+def work2(pid, data, out, order): # 파일로 저장하는 함수
     tempdict = dict()
 
     while True:
         tmp = data.get()
         if tmp == "stop":
             df = pd.DataFrame(tempdict)
-            df = df[[os.path.basename(gtf) for gtf in gtf_list]]
+            df = df[[os.path.basename(o) for o in order]]
             df.to_csv(out, sep = "\t", index_label = "GeneID")
             return
 
@@ -57,7 +58,7 @@ if __name__ == "__main__":
     FPKM = Manager().Queue()
     TPM = Manager().Queue()
 
-    with Pool(6) as pl:
+    with Pool(6) as pl: #한번에 6개의 gtf를 병렬로 처리
         ret = pl.starmap(work, [[i, gtf, FPKM, TPM] for i, gtf in enumerate(gtf_list)])
         print(ret)
         

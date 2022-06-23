@@ -1,3 +1,6 @@
+# execute stringtie
+# 05.Stringtie.sh
+
 import sys
 import os
 import subprocess

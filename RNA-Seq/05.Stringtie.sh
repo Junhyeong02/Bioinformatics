@@ -1,3 +1,15 @@
+# usage : python3 05_sub.stringtie.py [gtf] [bam_dir] [cpu] [prefix]
+
+GTF=""
+BAM_DIR=""
+CPU=""
+PREFIX=""
+
+python3 05_sub.stringtie.py $GTF $BAM_DIR $CPU $PREFIX
+#python3 05_sub.stringtie.py ../02.Genome_data/CaCM334.MYB.ReAnnot.chromosome.sort.gtf ../04.Mapping/CM334.NaCl/ 3 CaCM334
+
+### history ###
+
 #### stringtie 2021.08.06 ####
 
 # time python3 05_sub.stringtie.py ../TEST/02.Genome_data/Bac_0806.gtf ../04.Mapping/Bac.tissue/ 20 Cb
@@ -52,4 +64,4 @@
 # time python3 05_sub.stringtie.py ../02.Genome_data/CaCM334.MYB.ReAnnot.chromosome.sort.gtf ../04.Mapping/CM334.pericarp/ 10 CaCM334
 
 #### 2021.12.24 ####
-time python3 05_sub.stringtie.py ../02.Genome_data/CaCM334.MYB.ReAnnot.chromosome.sort.gtf ../04.Mapping/CM334.NaCl/ 3 CaCM334
+# time python3 05_sub.stringtie.py ../02.Genome_data/CaCM334.MYB.ReAnnot.chromosome.sort.gtf ../04.Mapping/CM334.NaCl/ 3 CaCM334

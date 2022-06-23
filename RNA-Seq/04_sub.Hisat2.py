@@ -1,3 +1,6 @@
+# execute hisat2
+# 04.Mapping.sh
+
 import sys
 import os
 import subprocess

@@ -1,6 +1,7 @@
+# target gene과 연결된 gene 중에서 CUTOFF 이상의 연결을 가진 gene을 저장
+# KEGG 분석에서 GENE2TERM, TERM2GENE 데이터로 gene 설명 추가
+
 import sys
-import os
-import numpy as np
 import pandas as pd
 
 target = sys.argv[1]

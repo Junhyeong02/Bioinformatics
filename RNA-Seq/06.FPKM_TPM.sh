@@ -1,3 +1,13 @@
+# usage : python3 06_sub.FPKM_TPM.py [GTF_PATH] [OUTPUT_PATH + PRIFIX]
+
+GTF_PATH=""
+OUTPUT_PATH=""
+
+python3 06_sub.FPKM_TPM.py $GTF_PATH $OUTPUT_PATH
+# python3 06_sub.FPKM_TPM.py ../04.Mapping/Zunla-1.tissue/ ../05.FPKM_TPM/Zunla-1.tissue/Zunla-1.tissue
+
+### history ###
+
 # time python3 06_sub.FPKM_TPM.py ../04.Mapping/Bac.tissue/ ../05.FPKM_TPM/ *.chromosome.gtf
 # time python3 06_sub.FPKM_TPM.py ../04.Mapping/Chi.tissue/ ../05.FPKM_TPM/ *.chromosome.gtf
 # time python3 06_sub.FPKM_TPM.py ../04.Mapping/CM334.Mock/ ../05.FPKM_TPM/ *.CM334_0817.chromosome.gtf
@@ -48,5 +58,5 @@
 # python3 06_sub.FPKM_TPM.py ../04.Mapping/CM334.Pc/ ../05.FPKM_TPM/CM334.Pc/CM334.Pc.test
 # python3 06_sub.FPKM_TPM.py ../04.Mapping/CM334.Pc/ ../05.FPKM_TPM/CM334.Pc/CM334.Pc
 # python3 06_sub.FPKM_TPM.py ../04.Mapping/CM334.Pi/ ../05.FPKM_TPM/CM334.Pi/CM334.Pi
-python3 06_sub.FPKM_TPM.py ../04.Mapping/Zunla-1.tissue/ ../05.FPKM_TPM/Zunla-1.tissue/Zunla-1.tissue
+# python3 06_sub.FPKM_TPM.py ../04.Mapping/Zunla-1.tissue/ ../05.FPKM_TPM/Zunla-1.tissue/Zunla-1.tissue
 

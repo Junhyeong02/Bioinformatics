@@ -1,4 +1,8 @@
+# 주석으로 분리된 블럭 단위로 R shell에서 실행
+
 ##############################################################################################################
+
+# 초기 설정
 
 workingDir = "WORKING_DIRTORY"
 inputFile = "INPUT_FILE"
@@ -12,6 +16,7 @@ getwd()
 
 ##############################################################################################################
 
+# 라이브러리 import 
 library(WGCNA)
 options(stringsAsFactors = FALSE);
 options(scipen = 100000);
@@ -24,6 +29,8 @@ names(datExpr0) = expData$GeneID;
 rownames(datExpr0) = names(expData)[-1];
 
 ##############################################################################################################
+
+# data preprocessing
 
 gsg = goodSamplesGenes(datExpr0, verbose = 3);
 gsg$allOK
@@ -42,10 +49,11 @@ if (!gsg$allOK)
 
 ##############################################################################################################
 
+# 샘플 간 거리 계산
 sampleTree  = hclust(dist(datExpr0), method  =  "average");
 
-
 ##############################################################################################################
+
 
 sizeGrWindow(12,9)
 par(cex = 0.6);
@@ -54,6 +62,7 @@ plot(sampleTree, main = "Sample clustering to detect outliers",
 sub="", xlab="", cex.lab = 1.5, cex.axis = 1.5, cex.main = 2)
 ###############################################################################################################
 
+# 위 코드 실행으로 아웃라이어를 탐지, 많이 차이 나는 샘플을 제거
 sampleHeightCut = 10000#
 ###############################################################################################################
 
@@ -114,6 +123,7 @@ dev.off();
 
 ##################################################################################################################
 
+# 파워값 수정 
 powerBeta  = 8 #
 
 ##################################################################################################################
@@ -166,12 +176,14 @@ dev.off()
 
 ##################################################################################################################
 
+# 실행 결과 저장
 write.table(MEs, file = "MEs.txt", sep = '\t', quote = FALSE);
 write.table(net$colors, file = "ID_colors.txt", sep = '\t', quote= FALSE, col.names = FALSE);
 write.table(moduleColors, file = "moduleColors.txt", sep = "\t", quote= FALSE, col.names = FALSE);
 
 ##################################################################################################################
 
+# 그래프를 위한 table 저장
 TOM = TOMsimilarityFromExpr(datExpr, power = powerBeta);
 probes = names(datExpr) 
 dimnames(TOM) = list(probes, probes)
@@ -179,9 +191,10 @@ cyt = exportNetworkToCytoscape(TOM, edgeFile = "CytoscapeInput-edges.txt", nodeF
 
 #################################################################################################################
 
+# 원하는 모듈의 node, edge data 저장
 x = load(paste0(TOMFileBase, ".RData"))
 TOM = TOMsimilarityFromExpr(datExpr, power = powerBeta); # Read in the annotation file 
-modules = c("purple"); # Select module probes 
+modules = c("purple", "blue"); # array에 원하는 module 색깔을 선택 
 probes = names(datExpr) 
 inModule = is.finite(match(moduleColors, modules)); 
 modProbes = probes[inModule]; 

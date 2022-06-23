@@ -1,6 +1,9 @@
+
+# WGCNA 결과 분석 코드
+# 실행하면 모듈의 종류, gene이 속해 있는 모듈, 모듈별로 gene TPM 값 정리한 결과 폴더 반환 
+
 import sys
 import os
-import numpy as np
 import pandas as pd
 
 ID_modules = sys.argv[1]  # ../06.CoExpNetwork/Bac/ID_colors.txt

@@ -1,3 +1,6 @@
+# DESeq 하기 전에 sample_lst.txt, Phenotype.txt 만드는 코드
+# 07.DESeq.sh 참조
+
 import sys
 import os
 import json
