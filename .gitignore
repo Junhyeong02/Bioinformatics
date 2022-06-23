@@ -17,3 +17,4 @@ MEs.*.txt
 *.hwp
 *.docx
 *.doc
+*.ipynb_checkpoints
