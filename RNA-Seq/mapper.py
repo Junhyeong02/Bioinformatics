@@ -1,0 +1,2 @@
+class ReadMapper():
+    pass
