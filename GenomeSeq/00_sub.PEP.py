@@ -1,10 +1,9 @@
-import sys
-import os
-import pandas as pd
-import numpy as np
+# gff, genome -> fasta
 
+import sys
+import pandas as pd
 from Bio import SeqIO
-from Bio.Seq import reverse_complement, Seq
+from Bio.Seq import Seq
 
 gff = sys.argv[1]
 genome = sys.argv[2]
@@ -13,13 +12,12 @@ out = sys.argv[3]
 print(gff, genome, out)
 
 df = pd.read_csv(gff, comment = "#", sep = "\t", names = ["seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attribute"], header = None)
+# read gff
 
 df.dropna(inplace = True)
-df["ID"] = df["attribute"].apply(lambda x: x.replace("ID=", ""))
+df["ID"] = df["attribute"].apply(lambda x: x.replace("ID=", "")) # ID 추출 "ID=" 이후 문자열
 
 genome_data = {record.id : record.seq for record in SeqIO.parse(genome, "fasta")}
-
-print("...")
 
 fw = open(out, "w")
 chk = True

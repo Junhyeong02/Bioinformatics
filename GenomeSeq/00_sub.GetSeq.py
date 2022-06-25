@@ -1,5 +1,9 @@
+# gene의 서열을 얻는 코드
+# 입력 id_list : 줄바꿈으로 구분된 gene id
+# 입력 fasta_path : fasta 파일의 경로
+# 출력 : gene의 서열
+
 import sys
-import os
 from glob import glob
 from Bio import SeqIO
 
