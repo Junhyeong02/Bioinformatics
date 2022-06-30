@@ -1,5 +1,6 @@
+# heatmap 그리는 코드
+
 import sys
-import os
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -10,7 +11,7 @@ rcParams['font.sans-serif'] = ['Arial']
 
 DATAMATRIX = sys.argv[1] # input data matrix, columns = ["GeneID", "sample1", "sample2", ...]
 OUT = sys.argv[2]
-TITLE = sys.argv[3]
+TITLE = sys.argv[3] # heatmap title
 
 df = pd.read_csv(DATAMATRIX, sep = "\t")
 

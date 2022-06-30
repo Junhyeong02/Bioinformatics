@@ -1,7 +1,5 @@
 import sys
-import os
 import pandas as pd
-from glob import glob
 
 PATH = sys.argv[1]
 OUT = sys.argv[2]

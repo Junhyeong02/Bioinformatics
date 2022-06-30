@@ -1,6 +1,4 @@
 import sys
-import os
-import pandas as pd
 import json
 import re
 
@@ -22,7 +20,8 @@ for temp1 in db["children"]:
             name = data["name"]
             # print(name)
             try:
-                mapid = re.search("\[PATH:(" + PREFIX + "[0-9]{5})\]$", name).group(1)
+                mapid = re.search(
+                    "\[PATH:(" + PREFIX + "[0-9]{5})\]$", name).group(1)
                 term = re.search("[0-9]{5} (.+) \[PATH:", name).group(1)
             except AttributeError:
                 continue
@@ -36,7 +35,6 @@ for temp1 in db["children"]:
                 except AttributeError:
                     continue
                 koset.add(ko)
-
 
             for ko in koset:
                 fw1.write(f"{mapid}\t{ko}\n")

@@ -1,3 +1,7 @@
+# KOFAMSCAN 결과 분석
+# input : tsv(kofamscan 결과), cut(e value cutoff), out(결과 경로)
+# output : GENE, KO number table + KO number, discription table
+
 import sys
 import pandas as pd
 

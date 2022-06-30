@@ -19,8 +19,8 @@ RESULT="infesT30-4_CAPS_DEG.txt"
 # prepDE.py3 -i sample_lst.txt -l $VALUE
 # cd $DIR
 
-# Rscript DESeq.R $DESEQ/$TARGET/ ACN CAPS $DESEQ/$TARGET/$RESUL
+Rscript DESeq.R $DESEQ/$TARGET/ ACN CAPS $DESEQ/$TARGET/$RESUL
 
 # python volcano.py $DESEQ/Infestans/infes_CAPS_DEG.txt $DESEQ/temp.png "TITLE"
 # python heatmap.py $DESEQ/sample.txt $DESEQ/heatmap.png "TITLE.heatmap"
-python heatmap.ortho.py $DESEQ/Capsici/capsici_CAPS_DEG.txt $DESEQ/Infestans/infes_CAPS_DEG.txt $DESEQ/Prof.HA_Lee/PinfPcaps.tsv Pcap Pinf $FPKMTPM/Capsici/Capsici.TPM.txt $FPKMTPM/Infestans/Infestans.TPM.txt "P-cap-CAPS" "P-infes-CAPS" heatmap.png "TITLE.heatmap"
+# python heatmap.ortho.py $DESEQ/Capsici/capsici_CAPS_DEG.txt $DESEQ/Infestans/infes_CAPS_DEG.txt $DESEQ/Prof.HA_Lee/PinfPcaps.tsv Pcap Pinf $FPKMTPM/Capsici/Capsici.TPM.txt $FPKMTPM/Infestans/Infestans.TPM.txt "P-cap-CAPS" "P-infes-CAPS" heatmap.png "TITLE.heatmap"

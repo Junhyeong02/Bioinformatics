@@ -1,19 +1,17 @@
 import sys
-import os
-import re
 import pandas as pd
-from glob import glob
 from Bio import SeqIO
 
 TGFam_gff = sys.argv[1]
 fasta = sys.argv[2]            # ../TGFam.re/*/*.geneIncludingMYB.fasta
-original_gff = sys.argv[3]      
+original_gff = sys.argv[3]
 
 TGFam_gene_location = {}
 
-df = pd.read_csv(TGFam_gff, sep = "\t", names = ["seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attribute"], header = None)
+df = pd.read_csv(TGFam_gff, sep="\t", names=[
+                 "seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attribute"], header=None)
 
-df.dropna(inplace = True)
+df.dropna(inplace=True)
 df = df[df["feature"] == "gene"]
 
 pre_MYB = set("ID=" + gene.id for gene in SeqIO.parse(fasta, "fasta"))
@@ -21,9 +19,10 @@ pre_MYB = set("ID=" + gene.id for gene in SeqIO.parse(fasta, "fasta"))
 overlap_count = 0
 no_overlap_count = 0
 
-gff_df = pd.read_csv(original_gff, sep = "\t", names = ["seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attribute"], header = None)
+gff_df = pd.read_csv(original_gff, sep="\t", names=[
+                     "seqname", "source", "feature", "start", "end", "score", "strand", "frame", "attribute"], header=None)
 
-gff_df.dropna(inplace = True)
+gff_df.dropna(inplace=True)
 gff_df = gff_df[gff_df["feature"] == "gene"]
 
 for idx in df.index:
@@ -32,7 +31,7 @@ for idx in df.index:
     end = df.loc[idx, "end"]
 
     # if seqname not in gff_df["seqname"]:
-        
+
     #     no_overlap_count += 1
     #     continue
 
@@ -40,7 +39,7 @@ for idx in df.index:
 
     for idx2 in temp.index:
         if temp.loc[idx2, "attribute"] not in pre_MYB:
-             continue
+            continue
 
         g_start = temp.loc[idx2, "start"]
         g_end = temp.loc[idx2, "end"]
@@ -54,7 +53,5 @@ for idx in df.index:
     else:
         no_overlap_count += 1
 
-print(fasta)
-print("Total number of overlap count : {}".format(overlap_count)) 
+print("Total number of overlap count : {}".format(overlap_count))
 print("Total number of no overlapped gene : {}".format(no_overlap_count))
-        

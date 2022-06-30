@@ -1,3 +1,5 @@
+#### DESeq 실행 코드 ㅁ
+
 args <- commandArgs(trailingOnly = TRUE)
 
 workingdir = args[1]
