@@ -8,45 +8,45 @@
 - 파이썬으로 자동화 코드와 후분석 코드를 작성하였다.
 - Shell script는 언제, 어떻게 코드를 실행시켰는지 기록하고, 연속된 분석을 수행하기 위해 분석마다 필수적으로 작성하였다.
 
-### RNA-Seq
+### RNA-Seq/
 - RNA-Seq 분석은 생물정보학에서 가장 널리 사용하면서도 복잡한 분석이다. RNA-Seq 분석은 여러 단계로 이루어져 있고, 각 단계마다 서로 다른 응용프로그램을 이용한다.  이 폴더의 코드는 RNA-Seq 분석을 자동화하여 실행할 수 있도록 한다.
 - RNA-Seq.sh 파일에서 데이터의 경로와 파라미터를 미리 설정한 후 shell을 실행하면 RNA-Seq 분석을 자동으로 진행할 수 있다.
 - fastqc.py, mapper.py, module.py 파일은 이전의 코드를 개선하기 위한 파일이다. 아직 구현 중인 프로젝트이다.
 
-### CoExprNetwork
+### CoExprNetwork/
 - Coexpression network 분석은 RNA-Seq 분석의 결과를 바탕으로 유전자 간의 상관관계를 찾는 분석이다.
 - WGCNA.R로 실행된다.
 - 다른 python 파일은 이후 분석에서 사용하기 위한 코드이다.
 
-### GenomeSeq
+### GenomeSeq/
 - gff 파일과 fasta 파일로부터 유전자의 서열을 얻는 코드
 - 기타 promoter 지역 등 유전체에서 원하는 서열을 얻기 위한 코드
 
-### supple
+### suppl/
 - 다른 분석 등에서 만들어진 데이터를 분석하고 정리하기 위한 코드
 
-### Tree
+### Tree/
 - 계통수 분석에 사용한 코드
 - 계통수 분석 후 파일 확장자 변경 및 유전자 이름 포맷팅
 
 > 이하 코드는 특별한 생명정보 분석을 위해 사용한 간단한 코드이다. 
-### Chromosome
+### Chromosome/
 - 염색체에 유전자의 위치를 그려줌
 
-### DESeq
+### DESeq/
 - DEG 분석을 위해 사용
 
-### GffTool
+### GffTool/
 - gff를 gtf 파일 포맷으로 바꾸어 주는 코드
 - gff 간의 포맷 변경
 
-### KEGG
+### KEGG/
 - KEGG 분석에 사용한 R 코드
 - KEGG 분석 후 데이터를 정리하기 위한 코드
 
-### Orthogroup
+### Orthogroup/
 - Orthogroup 정보를 정리하기 위한 코드
 
-### Test
+### Test/
 - 다른 분석이 제대로 진행되었는지 확인하기 위한 코드
 

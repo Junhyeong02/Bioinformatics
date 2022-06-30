@@ -1,6 +1,8 @@
+# GFF를 GTF로 바꾸는 코드
+# input : gff 경로, 출력될 gtf 파일 경로, gene_version
+# output : gtf
+
 import sys
-import os
-import re
 
 INPUT_FILE = sys.argv[1]
 OUTPUT_FILE = sys.argv[2]

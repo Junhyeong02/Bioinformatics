@@ -1,3 +1,6 @@
+# map number, ko number table 만드는 코드
+# input이 기억 안남
+
 import sys
 import json
 import re

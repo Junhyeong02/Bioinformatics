@@ -1,8 +1,11 @@
+# gff 합치기
+# 첫번째 arg gff로 두번째 arg gff를 덮어쓴다
+# start, end가 겹치면 첫번째 gff 사용
+# 원래 이름은 01_sub.JOIN_GFF.py
+
 import sys
 import os
 import re
-from glob import glob
-
 class Gene():
     def __init__(self, ID, start, end, data, strand, chk="TGFam"):
         self.ID = ID
