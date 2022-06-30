@@ -31,10 +31,6 @@ for tsv in tsv_path:
 
 print("ID\t#PF00249\tother domain")
 
-
-
-
-
 # for ID in order:
 #     print("{}\t{}\t{}".format(ID, Domain[ID], '\t'.join(other_domain[ID])))
 
